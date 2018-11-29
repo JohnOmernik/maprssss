@@ -4,7 +4,7 @@ FROM maprtech/pacc:6.0.1_5.0.0_ubuntu16
 RUN apt-get update && apt-get install -y unzip nano && apt-get clean && apt-get autoremove -y
 
 
-ENV APP_VER "3.1.0.0"
+ENV APP_VER "3.6.0"
 
 ENV APP_URL_BASE "https://archives.streamsets.com/datacollector/${APP_VER}/tarball"
 ENV APP_URL_FILE  "streamsets-datacollector-core-${APP_VER}.tgz"
