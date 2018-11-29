@@ -46,7 +46,7 @@ WORKDIR /opt/streamsets/$APP_INST_DIR
 RUN ./bin/streamsets stagelibs -list
 # install stage libraries as required
 
-RUN ./bin/streamsets stagelibs -install=streamsets-datacollector-elasticsearch_5-lib,streamsets-datacollector-mapr_6_0-lib,streamsets-datacollector-mapr_6_0-mep4-lib,streamsets-datacollector-vault-credentialstore-lib,streamsets-datacollector-influxdb_0_9-lib,streamsets-datacollector-jdbc-lib,streamsets-datacollector-mapr_5_2-lib,streamsets-datacollector-mapr_spark_2_1_mep_3_0-lib,streamsets-datacollector-mongodb_3-lib,streamsets-datacollector-mysql-binlog-lib,streamsets-datacollector-redis-lib,streamsets-datacollector-stats-lib,streamsets-datacollector-jython_2_7-lib
+RUN ./bin/streamsets stagelibs -install=streamsets-datacollector-elasticsearch_5-lib,streamsets-datacollector-mapr_6_0-lib,streamsets-datacollector-mapr_6_0-mep5-lib,streamsets-datacollector-mapr_6_0-mep4-lib,streamsets-datacollector-vault-credentialstore-lib,streamsets-datacollector-influxdb_0_9-lib,streamsets-datacollector-jdbc-lib,streamsets-datacollector-mapr_5_2-lib,streamsets-datacollector-mapr_spark_2_1_mep_3_0-lib,streamsets-datacollector-mongodb_3-lib,streamsets-datacollector-mysql-binlog-lib,streamsets-datacollector-redis-lib,streamsets-datacollector-stats-lib,streamsets-datacollector-jython_2_7-lib
 
 RUN ./bin/streamsets stagelibs -list
 
