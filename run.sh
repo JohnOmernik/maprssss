@@ -2,8 +2,16 @@
 
 
 . ./env.list
+PORTS=""
+if [ "${APP_SYSLOG_UDP_PORT}" != "" ]; then
+    PORTS="${PORTS} -p ${APP_SYSLOG_UDP_PORT}:${APP_SYSLOG_UDP_PORT}/udp"
+fi
+if [ "${APP_SYSLOG_TCP_PORT}" != "" ]; then
+    PORTS="${PORTS} -p ${APP_SYSLOG_TCP_PORT}:${APP_SYSLOG_TCP_PORT}/tcp"
+fi
 
-PORTS="-p ${APP_SYSLOG_UDP_PORT}:${APP_SYSLOG_UDP_PORT}/udp -p ${APP_SYSLOG_TCP_PORT}:${APP_SYSLOG_TCP_PORT}/tcp -p ${APP_STREAMSETS_TCP_PORT}:${APP_STREAMSETS_TCP_PORT}/tcp"
+PORTS="${PORTS} -p ${APP_STREAMSETS_TCP_PORT}:${APP_STREAMSETS_TCP_PORT}/tcp"
+
 
 if [ "$MAPR_TICKETFILE_LOCATION" != "" ]; then
     echo "Setting Secure Cluster"
