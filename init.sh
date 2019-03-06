@@ -25,6 +25,8 @@ if [ ! -d "$APP_CONF_DIR" ]; then
         echo "Copy files failed - exiting"
         exit 1
     fi
+    sed -i "s/#export SDC_JAVA_OPTS=\"-Dmaprlogin/export SDC_JAVA_OPTS=\"-Dmaprlogin/g" ${APP_CONF_DIR}/sdc-env.sh
+    sed -i "s/#export SDC_JAVA_OPTS=\"-Dmaprlogin/export SDC_JAVA_OPTS=\"-Dmaprlogin/g" ${APP_CONF_DIR}/sdcd-env.sh
     echo ""
     APP_SDC_CONF="$APP_CONF_DIR/sdc.properties"
     sed -r -i "s/^http\.port=.*/http.port=-1/g" $APP_SDC_CONF && sed -r -i "s/^https.port=.*/https.port=$APP_STREAMSETS_TCP_PORT/g" $APP_SDC_CONF
