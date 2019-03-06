@@ -4,7 +4,7 @@ FROM maprtech/pacc:6.0.1_5.0.0_ubuntu16
 RUN apt-get update && apt-get install -y unzip nano && apt-get clean && apt-get autoremove -y
 
 
-ENV APP_VER "3.1.0.0"
+ENV APP_VER "3.6.0"
 
 ENV APP_URL_BASE "https://archives.streamsets.com/datacollector/${APP_VER}/tarball"
 ENV APP_URL_FILE  "streamsets-datacollector-core-${APP_VER}.tgz"
@@ -46,7 +46,7 @@ WORKDIR /opt/streamsets/$APP_INST_DIR
 RUN ./bin/streamsets stagelibs -list
 # install stage libraries as required
 
-RUN ./bin/streamsets stagelibs -install=streamsets-datacollector-elasticsearch_5-lib,streamsets-datacollector-mapr_6_0-lib,streamsets-datacollector-mapr_6_0-mep4-lib,streamsets-datacollector-vault-credentialstore-lib,streamsets-datacollector-influxdb_0_9-lib,streamsets-datacollector-jdbc-lib,streamsets-datacollector-mapr_5_2-lib,streamsets-datacollector-mapr_spark_2_1_mep_3_0-lib,streamsets-datacollector-mongodb_3-lib,streamsets-datacollector-mysql-binlog-lib,streamsets-datacollector-redis-lib,streamsets-datacollector-stats-lib,streamsets-datacollector-jython_2_7-lib
+RUN ./bin/streamsets stagelibs -install=streamsets-datacollector-elasticsearch_5-lib,streamsets-datacollector-mapr_6_0-lib,streamsets-datacollector-mapr_6_0-mep5-lib,streamsets-datacollector-mapr_6_0-mep4-lib,streamsets-datacollector-vault-credentialstore-lib,streamsets-datacollector-influxdb_0_9-lib,streamsets-datacollector-jdbc-lib,streamsets-datacollector-mapr_5_2-lib,streamsets-datacollector-mapr_spark_2_1_mep_3_0-lib,streamsets-datacollector-mongodb_3-lib,streamsets-datacollector-mysql-binlog-lib,streamsets-datacollector-redis-lib,streamsets-datacollector-stats-lib,streamsets-datacollector-jython_2_7-lib
 
 RUN ./bin/streamsets stagelibs -list
 
